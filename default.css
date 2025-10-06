@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* ====== Global Styles ====== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding-top: 70px; /* khoảng trống cho navbar cố định */
+    background: linear-gradient(to right, #e8e8e8, #f9f9f9);
+    color: #333;
+}
+
+/* ====== Navbar ====== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95.5%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.96);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+    backdrop-filter: blur(10px);
+}
+
+.navbar .nav-left .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #222;
+}
+
+.navbar .nav-right a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.navbar .nav-right a.active {
+    font-weight: 700;
+    color: #000;
+}
+
+.navbar .nav-right a:hover {
+    color: #666;
+}
+
+.navbar .nav-right span {
+    color: #aaa;
+}
+
+/* ====== Hero Section ====== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('images/banner-bg.jpg') center/cover no-repeat;
+    filter: blur(4px) brightness(0.9);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding-left: 80px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+/* ====== Group Info ====== */
+.group-info {
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 500px;
+}
+
+.group-info h2 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.group-info table {
+    margin: 0 auto;
+    font-size: 1.1rem;
+    border-collapse: collapse;
+}
+
+.group-info td {
+    padding: 10px 20px;
+}
+
+/* ====== Member Cards ====== */
+.member-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 50px 20px;
+}
+
+.member-card {
+    background: #fff;
+    border-radius: 15px;
+    width: 220px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.member-card h3 {
+    color: #222;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.member-card p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.member-card:hover img {
+    border-color: #888;
+}
+
+/* ====== Member Info (đóng khung + căn giữa) ====== */
+.member-info-2col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 60px auto;
+    flex-wrap: wrap;
+    max-width: 900px;
+
+    /* 🔲 khung nền */
+    background: #ffffffd9;
+    padding: 50px;
+    border-radius: 25px;
+    border: 2px solid #ccc;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.member-info-2col .member-photo img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid #888;
+}
+
+.member-info-2col .member-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px;
+}
+
+.member-info-2col h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #222;
+    font-weight: 700;
+}
+
+.member-info-2col .member-details p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+    color: #333;
+}
+
+.member-info-2col .member-details a {
+    margin-top: 25px;
+    align-self: center;
+    display: inline-block;
+    padding: 12px 24px;
+    background: #222;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.member-info-2col .member-details a:hover {
+    background: #555;
+}
+
+/* ====== Footer ====== */
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #555;
+    margin-top: 60px;
+    border-radius: 10px 10px 0 0;
+    font-size: 0.95rem;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        padding-left: 30px;
+    }
+
+    .member-info-2col {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .member-info-2col .member-details {
+        align-items: center;
+    }
+}
+
+/* 🌿 Trang trí hoa lá */
+.flowers {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 260px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.flower {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0.9;
+    animation: sway 6s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    50% { transform: rotate(2deg) translateY(-6px); }
+}
+
+/* 🎨 Bố trí hoa */
+.flower.f4 { left: 0; bottom: 0; width: 140px; height: 140px; background-image: url("images/f4.png"); }
+.flower.f2 { left: 0px; bottom: 120px; width: 120px; height: 120px; background-image: url("images/f2.png"); }
+.flower.f1 { left: 120px; bottom: 0px; width: 100px; height: 100px; background-image: url("images/f1.png"); }
+.flower.f6 { right: 0; bottom: 0; width: 150px; height: 150px; background-image: url("images/f6.png"); }
+.flower.f5 { right: 30px; bottom: 110px; width: 120px; height: 120px; background-image: url("images/f5.png"); }
+.flower.f9 { right: 70px; bottom: 0px; width: 110px; height: 110px; background-image: url("images/f9.png"); }
+.flower.f3 { left: 70px; bottom: 65px; width: 100px; height: 100px; background-image: url("images/f3.png"); }
+.flower.f7 { left: 25px; bottom: 40px; width: 110px; height: 110px; background-image: url("images/f7.png"); }
+.flower.f8 { right: 80px; bottom: 190px; width: 90px; height: 90px; background-image: url("images/f8.png"); }
