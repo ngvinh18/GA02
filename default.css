@@ -189,70 +189,89 @@ body {
     border-color: #888;
 }
 
-/* ====== Member Info (đóng khung + căn giữa) ====== */
-.member-info-2col {
+/* ====== Member Info Page ====== */
+.member-info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 60px;
     margin: 60px auto;
-    flex-wrap: wrap;
-    max-width: 900px;
-
-    /* 🔲 khung nền */
+    max-width: 1600px;
+    padding: 60px;
     background: #ffffffd9;
-    padding: 50px;
     border-radius: 25px;
-    border: 2px solid #ccc;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    text-align: left;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.member-info-2col .member-photo img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 4px solid #888;
-}
-
-.member-info-2col .member-details {
+/* ====== Ảnh và thông tin ====== */
+.member-info .member-photo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    max-width: 450px;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 450px;
+    position: relative;
 }
 
-.member-info-2col h2 {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #222;
-    font-weight: 700;
-}
-
-.member-info-2col .member-details p {
-    font-size: 1.1rem;
-    margin: 8px 0;
-    color: #333;
-}
-
-.member-info-2col .member-details a {
-    margin-top: 25px;
-    align-self: center;
-    display: inline-block;
-    padding: 12px 24px;
-    background: #222;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
+/* Nút quay về (nhích sang trái 5px, to hơn, mờ) */
+.member-photo .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px; 
+    padding: 10px 16px; 
+    margin-left: -15px; /* nhích sang trái 5px */
+    background: none;
+    color: rgba(0,0,0,0.5);
     font-weight: bold;
-    transition: background 0.3s ease;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
-.member-info-2col .member-details a:hover {
-    background: #555;
+.member-photo .back-btn:hover {
+    color: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.05);
+}
+
+/* Tên và quốc gia */
+.member-photo .member-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #222;
+    text-align: left;
+    margin: 0;
+}
+
+.member-photo .country {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: left;
+    margin-top: -4px;  
+    margin-bottom: 25px; 
+}
+
+/* Ảnh thành viên */
+.member-photo img {
+    width: 750px;
+    height: 750px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Chi tiết thành viên */
+.member-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+    margin-top: 190px;
+    margin-left: 20px;
+}
+
+.member-details p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
 }
 
 /* ====== Footer ====== */
@@ -314,11 +333,4 @@ footer {
 
 /* 🎨 Bố trí hoa */
 .flower.f4 { left: 0; bottom: 0; width: 140px; height: 140px; background-image: url("images/f4.png"); }
-.flower.f2 { left: 0px; bottom: 120px; width: 120px; height: 120px; background-image: url("images/f2.png"); }
-.flower.f1 { left: 120px; bottom: 0px; width: 100px; height: 100px; background-image: url("images/f1.png"); }
 .flower.f6 { right: 0; bottom: 0; width: 150px; height: 150px; background-image: url("images/f6.png"); }
-.flower.f5 { right: 30px; bottom: 110px; width: 120px; height: 120px; background-image: url("images/f5.png"); }
-.flower.f9 { right: 70px; bottom: 0px; width: 110px; height: 110px; background-image: url("images/f9.png"); }
-.flower.f3 { left: 70px; bottom: 65px; width: 100px; height: 100px; background-image: url("images/f3.png"); }
-.flower.f7 { left: 25px; bottom: 40px; width: 110px; height: 110px; background-image: url("images/f7.png"); }
-.flower.f8 { right: 80px; bottom: 190px; width: 90px; height: 90px; background-image: url("images/f8.png"); }
