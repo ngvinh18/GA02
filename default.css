@@ -4,98 +4,11 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding-top: 70px; /* khoảng trống cho navbar cố định */
+    padding-top: 0px; /* khoảng trống cho navbar cố định */
     background: linear-gradient(to right, #e8e8e8, #f9f9f9);
     color: #333;
 }
 
-/* ====== Navbar ====== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.96);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-    border-radius: 0 ;
-    backdrop-filter: blur(10px);
-}
-
-/* Logo tên nhóm */
-.navbar .nav-left .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #222;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    position: relative;
-    padding-left: 40px; /* căn thẳng với hero */
-    line-height: 60px;
-    cursor: pointer;
-}
-
-/* Tooltip / khung ẩn */
-.navbar .nav-left .logo .tooltip {
-    position: absolute;
-    top: 100%; /* bên dưới logo */
-    left: 0;
-    background: rgba(255,255,255,0.95);
-    padding: 8px 12px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    font-size: 0.95rem;
-    color: #222;
-    white-space: nowrap;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: 0.3s ease;
-    z-index: 2000;
-}
-
-/* Hiện tooltip khi hover */
-.navbar .nav-left .logo:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.navbar .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;        /* khoảng cách giữa VI và EN */
-    margin-left: 20px; /* bạn tự chỉnh số px để căn vị trí */
-    font-size: 1rem;
-    color: #222;
-}
-
-
-.navbar .nav-right a {
-    color: #222;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.25s ease;
-}
-
-.navbar .nav-right a.active {
-    font-weight: 700;
-    color: #000;
-}
-
-.navbar .nav-right a:hover {
-    color: #666;
-}
-
-.navbar .nav-right span {
-    color: #aaa;
-}
 
 /* ====== Hero Section ====== */
 .hero {
@@ -106,7 +19,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0;
 }
 
 .hero::before {
@@ -131,12 +44,12 @@ body {
     z-index: 2;
     color: #fff;
     padding-left: 80px;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .hero-content h1 {
-    font-size: 5.2rem;
-    margin-bottom: 10px;
+    font-size: 5rem;
+    margin-bottom: 30px;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -193,7 +106,7 @@ body {
 }
 
 .member-card img {
-    border-radius: 50%;
+    border-radius: 50%; /* <-- bo tròn ảnh thành viên */
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -201,6 +114,7 @@ body {
     border: 3px solid #ccc;
     transition: border-color 0.3s ease;
 }
+
 
 .member-card h3 {
     color: #222;
@@ -226,13 +140,13 @@ body {
 .member-info {
     display: flex;
     align-items: flex-start;
-    gap: 60px;
-    margin: 60px auto;
-    max-width: 1600px;
-    padding: 60px;
+    gap: 30px;           /* giảm gap */
+    margin: 30px auto;   /* giảm margin */
+    max-width: 1200px;   /* giảm max-width */
+    padding: 30px;       /* giảm padding */
     background: #ffffffd9;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-radius: 20px; /* giảm bo tròn */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); /* giảm shadow */
 }
 
 /* Ảnh và thông tin */
@@ -240,8 +154,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    min-width: 450px;
+    gap: 6px;            /* giảm gap */
+    min-width: 300px;    /* giảm kích thước tối thiểu */
     position: relative;
 }
 
@@ -250,13 +164,13 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 4px; 
-    padding: 10px 16px; 
-    margin-left: -15px;
+    padding: 6px 12px;    /* giảm padding */
+    margin-left: -10px;   /* giảm margin */
     background: none;
     color: rgba(0,0,0,0.5);
     font-weight: bold;
-    font-size: 1.1rem;
-    border-radius: 12px;
+    font-size: 0.9rem;    /* giảm font */
+    border-radius: 10px;
     text-decoration: none;
     transition: color 0.3s ease, background 0.3s ease;
 }
@@ -266,43 +180,36 @@ body {
     background: rgba(0,0,0,0.05);
 }
 
-/* Tên và quốc gia */
-.member-photo .member-name {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #222;
-    text-align: left;
-    margin: 0;
-}
+
 
 .member-photo .country {
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* giảm font */
     color: #555;
     text-align: left;
-    margin-top: -4px;  
-    margin-bottom: 25px; 
+    margin-top: -3px;  
+    margin-bottom: 15px; /* giảm margin */
 }
 
 /* Ảnh thành viên */
 .member-photo img {
-    width: 750px;
-    height: 750px;
+    width: 450px;      /* giảm kích thước */
+    height: 450px;     /* giảm kích thước */
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 /* Chi tiết thành viên */
 .member-details {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    max-width: 600px;
-    margin-top: 190px;
-    margin-left: 20px;
+    gap: 15px;          /* giảm gap */
+    max-width: 400px;   /* giảm max-width */
+    margin-top: 130px;  /* giảm margin */
+    margin-left: 15px;  /* giảm margin */
 }
 
 .member-details p {
-    font-size: 1.2rem;
+    font-size: 1rem;    /* giảm font */
     margin: 0;
     color: #333;
 }
@@ -310,54 +217,52 @@ body {
 /* ====== Footer ====== */
 footer {
     text-align: center;
-    padding: 25px 10px;
+    padding: 15px 8px;  /* giảm padding */
     background: rgba(255, 255, 255, 0.95);
     color: #555;
-    margin-top: 60px;
+    margin-top: 30px;   /* giảm margin */
     border-radius: 10px 10px 0 0;
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* giảm font */
 }
 
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     .hero-content {
-        padding-left: 30px;
+        padding-left: 20px;
     }
 
     .member-info-2col {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        padding: 20px 15px;
     }
 
     .member-info-2col .member-details {
         align-items: center;
     }
+
+    .member-photo img {
+        width: 300px;  /* giảm ảnh cho mobile */
+        height: 300px;
+    }
+
+    .member-photo .member-name {
+        font-size: 1.6rem;
+    }
+
+    .member-photo .country {
+        font-size: 1rem;
+    }
+
+    .member-details p {
+        font-size: 0.95rem;
+    }
 }
 
-/* 🌿 Trang trí hoa lá */
-.flowers {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 260px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.flower {
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    opacity: 0.9;
-    animation: sway 6s ease-in-out infinite;
-}
 
 /* Vùng 1*/
 .hover-zone {
@@ -461,39 +366,3 @@ footer {
     50% { transform: rotate(2deg) translateY(-6px); }
 }
 
-/* 🎨 Bố trí hoa */
-.flower.f4 { left: 0; bottom: 0; width: 140px; height: 160px; background-image: url("images/f4.png"); }
-.flower.f6 { right: 0; bottom: 0; width: 150px; height: 150px; background-image: url("images/f6.png"); }
-/* Góc trái (gần f4) */
-.flower.f1 {
-    left: 100px; /* cách f4 một khoảng */
-    bottom: 0;
-    width: 120px;
-    height: 80px;
-    background-image: url("images/f1.png");
-}
-
-.flower.f2 {
-    left: 180px; /* cách f1 một khoảng */
-    bottom: 0;
-    width: 100px;
-    height: 80px;
-    background-image: url("images/f2.png");
-}
-
-/* Góc phải (gần f6) */
-.flower.f3 {
-    right: 80px; /* cách f6 một khoảng */
-    bottom: 0;
-    width: 120px;
-    height: 80px;
-    background-image: url("images/f3.png");
-}
-
-.flower.f5 {
-    right: 130px; /* cách f3 một khoảng */
-    bottom: 0;
-    width: 130px;
-    height: 80px;
-    background-image: url("images/f5.png");
-}
