@@ -363,7 +363,7 @@ footer {
 .hover-zone {
     position: absolute;   /* có thể đặt trên ảnh hoặc background */
     top: 260px;           /* vị trí từ trên */
-    left: 890px;          /* vị trí từ trái */
+    left: 640px;          /* vị trí từ trái */
     width: 170px;         /* chiều ngang vùng */
     height: 200px;        /* chiều cao vùng */
     background: transparent; /* tô đen nửa trong suốt */
@@ -396,7 +396,7 @@ footer {
 .hover-zone-2 {
     position: absolute;
     top: 260px;           /* giữ nguyên top */
-    left: 1200px;          /* 890 + 50 */
+    left: 860px;          /* 890 + 50 */
     width: 170px;
     height: 200px;
     background: transparent;
@@ -427,7 +427,7 @@ footer {
 .hover-zone-3 {
     position: absolute;
     top: 260px;
-    left: 1500px;         /* 890 + 400 */
+    left: 1100px;         /* 890 + 400 */
     width: 170px;
     height: 200px;
     background: transparent;
