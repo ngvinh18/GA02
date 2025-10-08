@@ -24,7 +24,6 @@ body {
   overflow: hidden;
 }
 
-/* Ảnh nhóm thật (để click map) */
 .group-photo {
   position: absolute;
   inset: 0;
@@ -35,18 +34,15 @@ body {
   z-index: 0;
 }
 
-/* Lớp phủ làm mờ */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
   z-index: 1;
-  pointer-events: none; /* ✅ Cho phép click xuyên qua */
+  pointer-events: none;
 }
 
-
-/* Nội dung text trong banner */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -68,7 +64,7 @@ body {
   font-weight: 300;
 }
 
-/* ====== Group Info (nếu có) ====== */
+/* ====== Group Info ====== */
 .group-info {
   margin: 40px auto;
   background: rgba(255, 255, 255, 0.95);
@@ -157,7 +153,6 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* Ảnh và thông tin */
 .member-info .member-photo {
   display: flex;
   flex-direction: column;
@@ -167,7 +162,6 @@ body {
   position: relative;
 }
 
-/* Nút quay về */
 .member-photo .back-btn {
   display: inline-flex;
   align-items: center;
@@ -188,7 +182,6 @@ body {
   background: rgba(0,0,0,0.05);
 }
 
-/* Ảnh thành viên */
 .member-photo img {
   width: 450px;
   height: 450px;
@@ -219,6 +212,18 @@ body {
   margin: 0;
 }
 
+/* Link bấm được (Facebook & GitHub) */
+.member-details a {
+  color: inherit;           /* giữ màu chữ chung */
+  text-decoration: none;     /* bỏ gạch chân */
+  font-weight: 500;
+}
+
+.member-details a:hover {
+  text-decoration: underline; /* gạch chân khi hover */
+  color: #0073e6;             /* optional: hover màu xanh nhạt */
+}
+
 /* ====== Footer ====== */
 footer {
   text-align: center;
@@ -230,9 +235,10 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Tooltip */
 #tooltip {
   position: absolute;
-  background: rgba(0, 0, 0, 0.4);   /* ⬅️ nền tối nhẹ */
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   padding: 6px 10px;
   border-radius: 6px;
@@ -241,12 +247,10 @@ footer {
   display: none;
   z-index: 9999;
   white-space: nowrap;
-  backdrop-filter: blur(6px);       /* ⬅️ hiệu ứng làm mờ nền phía sau */
-  -webkit-backdrop-filter: blur(6px); /* ⬅️ hỗ trợ Safari */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* ⬅️ thêm viền mờ nhẹ cho đẹp */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-
 
 /* ====== Responsive ====== */
 @media (max-width: 900px) {
