@@ -17,7 +17,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -51,7 +51,7 @@ body {
   position: relative;
   z-index: 2;
   color: #fff;
-  padding-left: 80px;
+  padding-left: 90px;
   max-width: 800px;
   text-shadow: 0 3px 8px rgba(0,0,0,0.4);
 }
@@ -65,7 +65,7 @@ body {
 
 .hero-content p {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 /* ====== Group Info (nếu có) ====== */
@@ -106,7 +106,7 @@ body {
 .member-card {
   background: #fff;
   border-radius: 15px;
-  width: 220px;
+  width: 240px;
   padding: 25px 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
