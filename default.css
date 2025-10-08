@@ -8,9 +8,15 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to right, #e8e8e8, #f9f9f9);
   color: #333;
+}
+
+main {
+  flex: 1; /* chiếm toàn bộ khoảng trống còn lại */
 }
 
 /* ====== Hero Section ====== */
@@ -230,7 +236,6 @@ footer {
   padding: 20px 8px;
   background: rgba(255, 255, 255, 0.95);
   color: #555;
-  margin-top: 40px;
   border-radius: 10px 10px 0 0;
   font-size: 0.9rem;
 }
