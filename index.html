@@ -1,64 +1,106 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ba Chấm </title>
-    <link rel="stylesheet" href="default.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ba Chấm</title>
+  <link rel="stylesheet" href="default.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Tooltip tùy chỉnh */
+    #tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      pointer-events: none;
+      display: none;
+      z-index: 9999;
+      white-space: nowrap;
+      transition: opacity 0.15s ease;
+    }
+  </style>
 </head>
 <body>
 
-   <!-- Banner -->
-<section class="hero">
+  <!-- Banner -->
+  <section class="hero">
+    <!-- Ảnh nhóm -->
+    <img src="images/group-photo.jpg" alt="Group Photo" usemap="#groupmap" class="group-photo">
+
+    <!-- Định nghĩa các vùng click -->
+    <map name="groupmap">
+      <area shape="rect" coords="600,450,750,870"
+            href="members/23120343/23120343.html"
+            alt="Trần Trọng Quân"
+            data-mssv="23120343">
+      <area shape="rect" coords="788,450,927,880"
+            href="members/21120595/21120595.html"
+            alt="Nguyễn Thành Vinh"
+            data-mssv="21120595">
+      <area shape="rect" coords="964,450,1157,880"
+            href="members/22120156/22120156.html"
+            alt="Huỳnh Gia Khánh"
+            data-mssv="22120156">
+    </map>
+
+    <!-- Text banner -->
     <div class="hero-content">
-        <h1>Ba Chấm</h1>
-        <p>Nhóm Môn WEB 23_3</p>
+      <h1>Ba Chấm</h1>
+      <p>Nhóm Môn WEB 23_3</p>
     </div>
-</section>
+  </section>
 
+  <!-- Tooltip -->
+  <div id="tooltip"></div>
 
-    
-    <!-- Members -->
-    <section id="member-section" class="member-list">
-        <div class="member-card" onclick="location.href='members/21120595/21120595.html'">
-            <img src="members/21120595/images/profile.jpg" alt="Nguyễn Thành Vinh">
-            <h3>Nguyễn Thành Vinh</h3>
-            <p>21120595</p>
-        </div>
-        <div class="member-card" onclick="location.href='members/22120156/22120156.html'">
-            <img src="members/22120156/images/profile.jpg" alt="Huỳnh Gia Khánh">
-            <h3>Huỳnh Gia Khánh</h3>
-            <p>22120156</p>
-        </div>  
-        <div class="member-card" onclick="location.href='members/23120343/23120343.html'">
-            <img src="members/23120343/images/profile.jpg" alt="Trần Trọng Quân">
-            <h3>Trần Trọng Quân</h3>
-            <p>23120343</p>
-        </div>
-    </section>
+  <!-- Members -->
+  <section id="member-section" class="member-list">
+    <div class="member-card" onclick="location.href='members/21120595/21120595.html'">
+      <img src="members/21120595/images/profile.jpg" alt="Nguyễn Thành Vinh">
+      <h3>Nguyễn Thành Vinh</h3>
+      <p>21120595</p>
+    </div>
+    <div class="member-card" onclick="location.href='members/22120156/22120156.html'">
+      <img src="members/22120156/images/profile.jpg" alt="Huỳnh Gia Khánh">
+      <h3>Huỳnh Gia Khánh</h3>
+      <p>22120156</p>
+    </div>
+    <div class="member-card" onclick="location.href='members/23120343/23120343.html'">
+      <img src="members/23120343/images/profile.jpg" alt="Trần Trọng Quân">
+      <h3>Trần Trọng Quân</h3>
+      <p>23120343</p>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Ba Chấm Group. All rights reserved.</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ba Chấm Group. All rights reserved.</p>
+  </footer>
 
+  <!-- Responsive map fix -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+  <script>imageMapResize();</script>
 
-<!-- Vùng 1 (cũ) -->
-<div class="hover-zone">
-    <a href="members/23120343/23120343.html" class="hover-link">Xem chi tiết</a>
-</div>
+  <!-- Script hiển thị tooltip MSSV -->
+  <script>
+    const tooltip = document.getElementById('tooltip');
+    const areas = document.querySelectorAll('area');
 
-<!-- Vùng 2 (mới) -->
-<div class="hover-zone-2">
-    <a href="members/21120595/21120595.html" class="hover-link">Xem chi tiết</a>
-</div>
-
-<!-- Vùng 3 (mới) -->
-<div class="hover-zone-3">
-    <a href="members/22120156/22120156.html" class="hover-link">Xem chi tiết</a>
-</div>
-
+    areas.forEach(area => {
+      area.addEventListener('mousemove', e => {
+        tooltip.style.display = 'block';
+        tooltip.style.left = e.pageX + 12 + 'px';
+        tooltip.style.top = e.pageY + 12 + 'px';
+        tooltip.textContent = area.dataset.mssv;
+      });
+      area.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
-</html> 
+</html>
